@@ -75,14 +75,14 @@ capteur infrarouge
 <img src="/images/ultrason.png" style="width:50%;height:auto" />
 Capteur ultra-son
 
-<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
+<img src="" style="width:auto;height:auto" />
 Télécommande infrarouge
 
-<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
+<img src="" style="width:auto;height:auto" />
 capteur de tem pérature et
 d’humidité
 
-<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
+<img src="" style="width:auto;height:auto" />
 Buzzer
 
 

@@ -75,14 +75,14 @@ capteur infrarouge
 <img src="/images/ultrason.png" style="width:50%;height:auto" />
 Capteur ultra-son
 
-<img src="/images/télécommande_IR.jpg" style="width:auto;height:auto" />
+<img src="/images/télécommande_IR.jpg" style="width:50%;height:auto" />
 Télécommande infrarouge
 
-<img src="/images/DHT22.png" style="width:auto;height:auto" />
+<img src="/images/DHT22.png" style="width:25%;height:auto" />
 capteur de tem pérature et
 d’humidité
 
-<img src="buzzer.png" style="width:auto;height:auto" />
+<img src="/images/buzzer.png" style="width:25%;height:auto" />
 Buzzer
 
 
@@ -187,7 +187,7 @@ de l’humidité.
 Pour avoir des informations sur l’environnement entourant le robot on a créé deux fonctions
 donnees_env() et alertDanger() qui se charge respectivement de récupérer des données
 relatives au climat et aux potentielle obstacle devant le robot.
-
+```
 void donnees_env(){
 float h = dht.readHumidity();
 float t = dht.readTemperature();
@@ -200,8 +200,8 @@ lcd.print("%");
 lcd.setCursor(0,1);
 lcd.print("Temp: ");
 lcd.print(t);
-
-
+```
+```
 lcd.print(" C");
 }
 void alertDanger(){
@@ -228,17 +228,18 @@ delay(100);
 }else{
 digitalWrite(buzzer, LOW);}
 }
-
+```
 
 Ensuite on va créer les fonctions qui permettront de contrôler les quatre directions de
 déplacements du robot avancer, reculer, gauche, droite ainsi que l’arrêt de l’engin.
+```
 void avancer(){
 digitalWrite(motor_in1, HIGH);
 digitalWrite(motor_in2,LOW);
 digitalWrite(motor2_in1, HIGH);
 digitalWrite(motor2_in2,LOW);
 }
-
+```
 ```
 void reculer (){
 digitalWrite(motor_in1, LOW);
@@ -290,11 +291,10 @@ pinMode(motor_in2, OUTPUT);
 //pinMode(motor2_en, OUTPUT);
 pinMode( motor2_in1, OUTPUT);
 pinMode(motor2_in2, OUTPUT);
-```
-```
+
 pinMode(buzzer, OUTPUT);
 ```
-
+```
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2, LOW);
 
@@ -323,7 +323,7 @@ time_mouv = millis();
 avancer();
 }else if(IrReceiver.decodedIRData.decodedRawData == 0xEA15FF00){ //arriere
 time_mouv = millis();
-
+```
 
 ```
 reculer();

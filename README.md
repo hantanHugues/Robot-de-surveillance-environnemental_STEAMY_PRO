@@ -75,7 +75,7 @@ capteur infrarouge
 <img src="/images/ultrason.png" style="width:50%;height:auto" />
 Capteur ultra-son
 
-<img src="/images/télécommande_IR.jpg" style="width:auto;height:auto" />
+<img src="" style="width:auto;height:auto" />
 Télécommande infrarouge
 
 <img src="" style="width:auto;height:auto" />

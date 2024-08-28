@@ -7,7 +7,7 @@
 
 # Sommaire
 
-## [A- Présentation du projet](###-A--Présentation-du-projet)
+## [A- Présentation du projet](#a--présentation-du-projet)
 
 ## a. Objectif du projet
 

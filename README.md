@@ -13,19 +13,19 @@
 
 ## b. Contexte d’utilisation
 
-## [B- Matériels nécessaires](#B- Matériels nécessaires)
+## [B- Matériels nécessaires](#b--Matériels-nécessaires)
 
 ## a. Composants et utilités
 
 ## b. Outil logiciel
 
-## [C- Installation et configuration](#C- Installation et configuration)
+## [C- Installation et configuration](#C--Installation-et-configuration)
 
 ## a. Montage physique
 
 ## b. Configuration logicielle
 
-## [D- Fonctionnement](#D- Fonctionnement)
+## [D- Fonctionnement](#D--Fonctionnement)
 
 ## a. Explication du code
 

@@ -163,17 +163,17 @@ bibliothèques propre au fonctionnement de ces modules.
 Ensuite nous définissons les variables globales de notre système. C’est également à cette
 étape que l’on établir les pines que nous utiliserons dans notre système.
 
-```
+```C++
 const unsigned long checkInterval = 3000;
 unsigned long time_mouv;
 unsigned long diff_time;
 const int trigPin = 2; // Pin connecté au trig du capteur Dht
 ```
 
-```
+```c++
 const int echoPin = 3; // Pin connecté à echo du capteur Dht
 ```
-```
+```C++
 //motor 1
 int motor_in1 = 11;
 int motor_in2 = 12;
@@ -187,7 +187,7 @@ de l’humidité.
 Pour avoir des informations sur l’environnement entourant le robot on a créé deux fonctions
 donnees_env() et alertDanger() qui se charge respectivement de récupérer des données
 relatives au climat et aux potentielle obstacle devant le robot.
-```
+```C++
 void donnees_env(){
 float h = dht.readHumidity();
 float t = dht.readTemperature();
@@ -201,7 +201,7 @@ lcd.setCursor(0,1);
 lcd.print("Temp: ");
 lcd.print(t);
 ```
-```
+```C++
 lcd.print(" C");
 }
 void alertDanger(){
@@ -232,7 +232,7 @@ digitalWrite(buzzer, LOW);}
 
 Ensuite on va créer les fonctions qui permettront de contrôler les quatre directions de
 déplacements du robot avancer, reculer, gauche, droite ainsi que l’arrêt de l’engin.
-```
+```C++
 void avancer(){
 digitalWrite(motor_in1, HIGH);
 digitalWrite(motor_in2,LOW);
@@ -240,7 +240,7 @@ digitalWrite(motor2_in1, HIGH);
 digitalWrite(motor2_in2,LOW);
 }
 ```
-```
+```C++
 void reculer (){
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2,HIGH);
@@ -254,7 +254,7 @@ digitalWrite(motor2_in1, HIGH);
 digitalWrite(motor2_in2, LOW);
 }
 ```
-```
+```C++
 void left(){
 digitalWrite(motor_in1, HIGH);
 digitalWrite(motor_in2,LOW);
@@ -263,7 +263,7 @@ digitalWrite(motor2_in2,HIGH);
 }
 ```
 
-```
+```C++
 void stopMotor(){
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2,LOW);
@@ -276,7 +276,7 @@ contient toutes les configurations de base du code et une boucle qui se répète
 loop(). Dans cette dernière le système lit les signaux infrarouges qu’il reçoit. Il les compare
 aux signaux déclencheurs d’actions et réagir en conséquence.
 
-```
+```C++
 void setup() {
 // put your setup code here, to run once:
 Serial.begin(9600);
@@ -287,14 +287,14 @@ dht.begin();
 pinMode( motor_in1, OUTPUT);
 pinMode(motor_in2, OUTPUT);
 ```
-```
+```C++
 //pinMode(motor2_en, OUTPUT);
 pinMode( motor2_in1, OUTPUT);
 pinMode(motor2_in2, OUTPUT);
 
 pinMode(buzzer, OUTPUT);
 ```
-```
+```C++
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2, LOW);
 
@@ -325,7 +325,7 @@ avancer();
 time_mouv = millis();
 ```
 
-```
+```C++
 reculer();
 }else if (IrReceiver.decodedIRData.decodedRawData == 0xBC43FF00){ //droite
 time_mouv = millis();

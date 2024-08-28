@@ -56,29 +56,35 @@ résultats via un écran LCD, un buzzer ...
 
 ### a. Composants et utilités
 
-```
-Arduino Uno
-```
 
-```
+<img src="/images/Arduino_uno.jpeg" style="width:5.75in;height:2.45833in" />
+Arduino Uno
+
+
+<img src="/images/Arduino_Shield.png" style="width:50%;height:auto" />
 shield Arduino
-```
+
+<img src="/images/LCD.png" style="width:50%;height:auto" />
+
 **Écran LCD** pour l’affichage des informations
 
 
-```
+<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
 capteur infrarouge
-```
-```
+
+<img src="/images/ultrason.png" style="width:50%;height:auto" />
 Capteur ultra-son
-```
+
+<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
 Télécommande infrarouge
+
+<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
 capteur de tem pérature et
 d’humidité
 
-```
+<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
 Buzzer
-```
+
 
 ### b. Outil logiciel
 

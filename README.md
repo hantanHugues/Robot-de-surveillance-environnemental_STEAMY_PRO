@@ -78,11 +78,11 @@ Capteur ultra-son
 <img src="/images/télécommande_IR.jpg" style="width:auto;height:auto" />
 Télécommande infrarouge
 
-<img src="" style="width:auto;height:auto" />
+<img src="/images/DHT22.png" style="width:auto;height:auto" />
 capteur de tem pérature et
 d’humidité
 
-<img src="" style="width:auto;height:auto" />
+<img src="buzzer.png" style="width:auto;height:auto" />
 Buzzer
 
 

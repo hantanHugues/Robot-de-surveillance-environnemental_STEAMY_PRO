@@ -7,25 +7,25 @@
 
 # Sommaire
 
-## A- Présentation du projet
+## [A- Présentation du projet](#a--présentation-du-projet)
 
 ## a. Objectif du projet
 
 ## b. Contexte d’utilisation
 
-## B- Matériels nécessaires
+## [B- Matériels nécessaires](#b--Matériels-nécessaires)
 
 ## a. Composants et utilités
 
 ## b. Outil logiciel
 
-## C- Installation et configuration
+## [C- Installation et configuration](#C--Installation-et-configuration)
 
 ## a. Montage physique
 
 ## b. Configuration logicielle
 
-## D- Fonctionnement
+## [D- Fonctionnement](#D--Fonctionnement)
 
 ## a. Explication du code
 
@@ -56,29 +56,35 @@ résultats via un écran LCD, un buzzer ...
 
 ### a. Composants et utilités
 
-```
-Arduino Uno
-```
 
-```
+<img src="/images/Arduino_uno.jpeg" style="width:5.75in;height:2.45833in" />
+Arduino Uno
+
+
+<img src="/images/Arduino_Shield.png" style="width:50%;height:auto" />
 shield Arduino
-```
+
+<img src="/images/LCD.png" style="width:50%;height:auto" />
+
 **Écran LCD** pour l’affichage des informations
 
 
-```
+<img src="/images/module_capteurIR.png" style="width:auto;height:auto" />
 capteur infrarouge
-```
-```
+
+<img src="/images/ultrason.png" style="width:50%;height:auto" />
 Capteur ultra-son
-```
+
+<img src="/images/télécommande_IR.jpg" style="width:50%;height:auto" />
 Télécommande infrarouge
+
+<img src="/images/DHT22.png" style="width:25%;height:auto" />
 capteur de tem pérature et
 d’humidité
 
-```
+<img src="/images/buzzer.png" style="width:25%;height:auto" />
 Buzzer
-```
+
 
 ### b. Outil logiciel
 
@@ -157,17 +163,17 @@ bibliothèques propre au fonctionnement de ces modules.
 Ensuite nous définissons les variables globales de notre système. C’est également à cette
 étape que l’on établir les pines que nous utiliserons dans notre système.
 
-```
+```C++
 const unsigned long checkInterval = 3000;
 unsigned long time_mouv;
 unsigned long diff_time;
 const int trigPin = 2; // Pin connecté au trig du capteur Dht
 ```
 
-```
+```c++
 const int echoPin = 3; // Pin connecté à echo du capteur Dht
 ```
-```
+```C++
 //motor 1
 int motor_in1 = 11;
 int motor_in2 = 12;
@@ -181,7 +187,7 @@ de l’humidité.
 Pour avoir des informations sur l’environnement entourant le robot on a créé deux fonctions
 donnees_env() et alertDanger() qui se charge respectivement de récupérer des données
 relatives au climat et aux potentielle obstacle devant le robot.
-
+```C++
 void donnees_env(){
 float h = dht.readHumidity();
 float t = dht.readTemperature();
@@ -194,8 +200,8 @@ lcd.print("%");
 lcd.setCursor(0,1);
 lcd.print("Temp: ");
 lcd.print(t);
-
-
+```
+```C++
 lcd.print(" C");
 }
 void alertDanger(){
@@ -222,18 +228,19 @@ delay(100);
 }else{
 digitalWrite(buzzer, LOW);}
 }
-
+```
 
 Ensuite on va créer les fonctions qui permettront de contrôler les quatre directions de
 déplacements du robot avancer, reculer, gauche, droite ainsi que l’arrêt de l’engin.
+```C++
 void avancer(){
 digitalWrite(motor_in1, HIGH);
 digitalWrite(motor_in2,LOW);
 digitalWrite(motor2_in1, HIGH);
 digitalWrite(motor2_in2,LOW);
 }
-
 ```
+```C++
 void reculer (){
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2,HIGH);
@@ -247,7 +254,7 @@ digitalWrite(motor2_in1, HIGH);
 digitalWrite(motor2_in2, LOW);
 }
 ```
-```
+```C++
 void left(){
 digitalWrite(motor_in1, HIGH);
 digitalWrite(motor_in2,LOW);
@@ -256,7 +263,7 @@ digitalWrite(motor2_in2,HIGH);
 }
 ```
 
-```
+```C++
 void stopMotor(){
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2,LOW);
@@ -269,7 +276,7 @@ contient toutes les configurations de base du code et une boucle qui se répète
 loop(). Dans cette dernière le système lit les signaux infrarouges qu’il reçoit. Il les compare
 aux signaux déclencheurs d’actions et réagir en conséquence.
 
-```
+```C++
 void setup() {
 // put your setup code here, to run once:
 Serial.begin(9600);
@@ -280,15 +287,14 @@ dht.begin();
 pinMode( motor_in1, OUTPUT);
 pinMode(motor_in2, OUTPUT);
 ```
-```
+```C++
 //pinMode(motor2_en, OUTPUT);
 pinMode( motor2_in1, OUTPUT);
 pinMode(motor2_in2, OUTPUT);
-```
-```
+
 pinMode(buzzer, OUTPUT);
 ```
-
+```C++
 digitalWrite(motor_in1, LOW);
 digitalWrite(motor_in2, LOW);
 
@@ -317,9 +323,9 @@ time_mouv = millis();
 avancer();
 }else if(IrReceiver.decodedIRData.decodedRawData == 0xEA15FF00){ //arriere
 time_mouv = millis();
-
-
 ```
+
+```C++
 reculer();
 }else if (IrReceiver.decodedIRData.decodedRawData == 0xBC43FF00){ //droite
 time_mouv = millis();

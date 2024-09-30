@@ -130,3 +130,33 @@ void setup() {
   }
    diff_time=millis() - time_mouv;
  }
+void avancer() { 
+    digitalWrite(motor_in1, HIGH);
+    digitalWrite(motor_in2, LOW);
+    digitalWrite(motor2_in1, HIGH);
+    digitalWrite(motor2_in2, LOW); 
+  }
+void reculer() {
+    digitalWrite(motor_in1, LOW);
+    digitalWrite(motor_in2, HIGH); 
+    digitalWrite(motor2_in1, LOW);
+    digitalWrite(motor2_in2, HIGH); 
+    } 
+void right() {
+    digitalWrite(motor_in1, LOW);
+    digitalWrite(motor_in2, HIGH);
+    digitalWrite(motor2_in1, HIGH);
+    digitalWrite(motor2_in2, LOW);
+    } 
+void left() {
+    digitalWrite(motor_in1, HIGH); 
+    digitalWrite(motor_in2, LOW);
+    digitalWrite(motor2_in1, LOW); 
+    digitalWrite(motor2_in2, HIGH);
+      } 
+void stopMotor() { 
+    digitalWrite(motor_in1, LOW);
+    digitalWrite(motor_in2, LOW);
+    digitalWrite(motor2_in1, LOW);
+    digitalWrite(motor2_in2, LOW);
+    }
